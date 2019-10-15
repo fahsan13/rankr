@@ -1,9 +1,12 @@
 import React from 'react';
+import Article from './component/Article';
 
-const App = () => (
-  <div className="helloworld">
-    <h1>Hello, World!</h1>
-  </div>
-);
+const App = () => {
+  return (  
+      <div className="article">
+        <Article />
+      </div>
+  );
+}
 
 export default App;
