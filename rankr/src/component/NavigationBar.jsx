@@ -1,9 +1,10 @@
-// import React from 'react'
-// import ArticleDataLoader from './ArticleDataLoader';
-// import { Link } from 'react-router-dom';
+import React from 'react'
 
-// const NavigationBar = () => {      
-//     return ((<Link to='google.com'>Next article</Link>));    
-// };   
+const NavigationBar = ({ allArticlesRead, handler, loading }) => {
+    if (allArticlesRead) {
+        return `You've read all available articles.`;
+    }
+    return loading ? null : <button onClick={handler()}>Next Article</button> 
+};
 
-// export default NavigationBar;
+export default NavigationBar;

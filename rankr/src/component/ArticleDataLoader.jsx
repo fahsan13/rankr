@@ -1,27 +1,56 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
+import Page from './Page'
 
-const ArticleDataLoader = () => {
-    const [articleTitle, setArticleTitle] = useState(null);
-    const [articleBody, setArticleBody] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const articles = [1, 2, 3, 4, 5];
-
-    const getRandomArticle = () => {
-        return articles[Math.floor(Math.random() * articles.length)]
+class ArticleDataLoader extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          articleTitle: null,
+          articleBody: null,
+          loading: true,
+          articles: [1, 2, 3, 4, 5], // Assumption: we've already determined the number of articles to be rendered, e.g. from server request.
+          allArticlesRead: false
+        };
+        this.retrieveArticleData = this.retrieveArticleData.bind(this);
     };
 
-    const retrieveArticleData = async () => {
-        const response = await fetch(`./data/article-${getRandomArticle()}.json`)
+    componentDidMount() {
+        this.retrieveArticleData();
+    };
+
+    checkIfAllArticlesRead = () => {
+        if (this.state.articles.length === 0) {
+           this.setState({
+             allArticlesRead: true
+           });
+        };
+    };
+
+    async retrieveArticleData() {
+        const currentArticle = this.getRandomArticleIndex();
+        const response = await fetch(`./data/article-${currentArticle}.json`);
         const json = await response.json();
-        setArticleTitle(json.title);
-        setArticleBody(json.body);
-        setLoading(false);
+        const remainingArticles = this.state.articles.filter(index => index !== currentArticle);
+
+        this.setState({
+            articleTitle: json.title,
+            articleBody: json.body,
+            loading: false,
+            articles: remainingArticles,
+        });
+        this.checkIfAllArticlesRead();
     };
 
-    useEffect(() => {
-        retrieveArticleData();
-      }, []);
-    return [articleTitle, articleBody, loading];
+    getRandomArticleIndex () {
+        return this.state.articles[Math.floor(Math.random() * this.state.articles.length)];
+    };
+
+    render() {
+        const { articleTitle, articleBody, loading, allArticlesRead } = this.state;
+        return (
+          <Page articleTitle={articleTitle} articleBody={articleBody} loading={loading} allArticlesRead={allArticlesRead} handler={() => this.retrieveArticleData} />
+        );
+      }
 };   
 
 export default ArticleDataLoader;
