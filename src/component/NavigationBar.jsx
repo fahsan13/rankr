@@ -1,8 +1,11 @@
 import React from 'react'
+import RankingForm from './RankingForm'
 
 const NavigationBar = ({ allArticlesRead, handler, loading }) => {
     if (allArticlesRead) {
-        return `You've read all available articles.`;
+        return <>
+                <RankingForm />
+               </>
     }
     return loading ? null : <button onClick={handler()}>Next Article</button> 
 };
