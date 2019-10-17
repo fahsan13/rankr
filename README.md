@@ -48,6 +48,7 @@ $ npm test
         - As the application grows, I'd look to separate concerns and extract out relevant CSS for components into their own files, or explore alternative scalable solutions for styling.
 - Improve error handling.
 - Manual build configuration.
+    - This would allow me to move data/ (containing JSON files) from the public/ folder to the project root.
 
 ## Reflection
 
