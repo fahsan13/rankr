@@ -55,6 +55,7 @@ describe('ArticleDataLoader', () => {
         act(() => {
             articleDataLoaderInstance.retrieveArticleData();
         });
+
         expect(global.fetch).toHaveBeenCalledTimes(1);
     });
 
@@ -69,7 +70,7 @@ describe('ArticleDataLoader', () => {
             articleDataLoaderInstance.state.articles = [];
             articleDataLoaderInstance.checkIfAllArticlesRead();
         });
-
+        
         expect(articleDataLoaderInstance.state.allArticlesRead).toBe(true);
     });
 });

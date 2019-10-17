@@ -21,6 +21,7 @@ describe('NavigationBar', () => {
         act(() => {
             render(<NavigationBar allArticlesRead={false} handler={() => {}} loading={false}/>, container);
         });
+
         expect(container.innerHTML).toBe(`<div class="next-article-button-container"><button class="button">Next Article</button></div>`);
     });
 
@@ -28,6 +29,7 @@ describe('NavigationBar', () => {
         act(() => {
             render(<NavigationBar allArticlesRead={false} handler={() => {}} loading={true}/>, container);
         });
+
         expect(container.innerHTML).toBe('');
     });
 
@@ -35,6 +37,7 @@ describe('NavigationBar', () => {
         act(() => {
             render(<NavigationBar allArticlesRead={true} handler={() => {}} loading={false}/>, container);
         });
+        
         expect(container.innerHTML).toContain(`<div class="ranking-form">`);
     });
 });

@@ -22,6 +22,7 @@ describe('Header', () => {
         act(() => {
             render( <Header />, container);
         });
+        
         expect(container.innerHTML).toBe('<header>Rankr</header>');
     });
 });

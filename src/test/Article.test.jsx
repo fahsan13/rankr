@@ -25,9 +25,11 @@ describe('Article', () => {
                 'text': 'Test Article Paragraph'
             }
         }];
+        
         act(() => {
             render(<Article articleTitle={title} articleBody={body}/>, container);
         });
+
         expect(container.innerHTML).toBe(`<article><h1>Test Article Title</h1><p>Test Article Paragraph</p></article>`);
     });
 });

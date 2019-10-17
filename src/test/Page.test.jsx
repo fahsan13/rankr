@@ -33,6 +33,7 @@ describe('Page', () => {
                 container
             );
         });
+
         expect(container.innerHTML).toContain(`<article><h1>Test Title</h1><p>Test Article Paragraph</p></article><div class="next-article-button-container">`);
     });
 
@@ -43,6 +44,7 @@ describe('Page', () => {
                 container
             );
         });
+
         expect(container.innerHTML).toContain('Loading...');
         expect(container.innerHTML).not.toContain('<article>');
     });
@@ -53,6 +55,7 @@ describe('Page', () => {
                 <Page articleTitle={testArticleTitle} articleBody={testArticleBody} loading={false} error={true} allArticlesRead={false} handler={() => { }} />,
                 container);
         });
+
         expect(container.innerHTML).toContain(`Sorry, we've encountered an error. Please reload the page and try again.`);
     });
 
@@ -61,6 +64,7 @@ describe('Page', () => {
             render(<Page articleTitle={testArticleTitle} articleBody={testArticleBody} loading={false}
                 error={false} allArticlesRead={true} handler={() => { }} />, container);
         });
+        
         expect(container.innerHTML).toContain(`<article><h1>Test Title</h1><p>Test Article Paragraph</p></article><div class="ranking-form">`);
     });
 });

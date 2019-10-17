@@ -21,6 +21,7 @@ describe('ArticleElement', () => {
         act(() => {
             render(<ArticleElement type={ 'heading' } model={ {text: 'test heading'} }/>, container);
         });
+
         expect(container.innerHTML).toBe('<h3>test heading</h3>');
     });
 
@@ -28,6 +29,7 @@ describe('ArticleElement', () => {
         act(() => {
             render(<ArticleElement type={ 'paragraph' } model={ {text: 'test paragraph'} }/>, container);
         });
+
         expect(container.innerHTML).toBe('<p>test paragraph</p>');
     });
 
@@ -41,6 +43,7 @@ describe('ArticleElement', () => {
         act(() => {
             render(<ArticleElement type={ 'image' } model={testModel}/>, container);
         });
+
         expect(container.innerHTML).toBe(`<img class="article-image" src="rankr.com" alt="expected alt text" width="360" height="420">`);
     });
 
@@ -55,6 +58,7 @@ describe('ArticleElement', () => {
         act(() => {
             render(<ArticleElement type={ 'list' } model={testModel}/>, container);
         });
+
         expect(container.innerHTML).toBe(`<ol><li>item 1</li><li>item 99</li></ol>`);
     });
 
@@ -69,6 +73,7 @@ describe('ArticleElement', () => {
         act(() => {
             render(<ArticleElement type={ 'list' } model={testModel}/>, container);
         });
+        
         expect(container.innerHTML).toBe(`<ul><li>item 1</li><li>item 99</li></ul>`);
     });
 });
