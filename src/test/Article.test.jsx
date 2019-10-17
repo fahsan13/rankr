@@ -17,14 +17,7 @@ afterEach(() => {
 });
 
 describe('Article', () => {
-    it('should indicate if an article is loading', () => {
-        act(() => {
-            render(<Article articleTitle={null} articleBody={null} loading={true}/>, container);
-        });
-        expect(container.innerHTML).toContain('Loading...');
-    });
-
-    it('should correctly render provided article data with appropriate HTML tags if data is not loading', () => {
+    it('should correctly render provided article data with appropriate HTML tags', () => {
         const title = 'Test Article Title';
         const body = [{
             'type': 'paragraph',
@@ -33,7 +26,7 @@ describe('Article', () => {
             }
         }];
         act(() => {
-            render(<Article articleTitle={title} articleBody={body} loading={false}/>, container);
+            render(<Article articleTitle={title} articleBody={body}/>, container);
         });
         expect(container.innerHTML).toBe(`<article><h1>Test Article Title</h1><p>Test Article Paragraph</p></article>`);
     });
