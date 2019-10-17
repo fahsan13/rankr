@@ -14,9 +14,7 @@ class RankingForm extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({
-      enteredText: event.target.value
-    });
+    this.setState({ enteredText: event.target.value });
   }
 
   handleSubmit(event) {
@@ -55,8 +53,8 @@ class RankingForm extends React.Component {
           <b>You have read all articles.</b>
           <form onSubmit={this.handleSubmit}>
             <label>
-              Rank articles below from favourite to least favourite, e.g. 5, 4, 2, 3, 1 <br></br>
-              <input type="text" title="Enter comma-separated integer values" value={this.state.enteredText} onChange={this.handleChange} />
+              Enter article ranking below from favourite to least favourite, e.g. 5, 4, 2, 3, 1 <br></br>
+              <input type="text" className="ranking-input"title="Enter comma-separated integers" value={this.state.enteredText} onChange={this.handleChange} />
             </label><br></br>
             <input className="button" type="submit" value="Submit Ranking" />
           </form>

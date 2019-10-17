@@ -59,6 +59,7 @@ class ArticleDataLoader extends React.Component {
       <>
         <Page articleTitle={articleTitle} articleBody={articleBody} loading={loading} error={error}
           allArticlesRead={allArticlesRead} handler={() => this.retrieveArticleData} />
+        <hr></hr>
         <div className="simulate-error-container">
           <button className="simulate-network-error" onClick={() => this.simulateNetworkError()}>Simulate network error</button>
         </div>

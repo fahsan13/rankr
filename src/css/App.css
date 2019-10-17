@@ -20,6 +20,11 @@ article {
   width: 70%;
 }
 
+hr {
+  margin-top: 2%;
+  width: 70%;
+}
+
 .article-image {
   display: block;
   margin-left: auto;
@@ -39,7 +44,9 @@ article {
   transition-duration: 0.1s;
   border-style: solid;
   border-radius: 2px;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
 }
 
 .button:hover {
@@ -51,7 +58,14 @@ article {
 }
 
 .ranking-form {
-  padding: 5% 10% 2% 10%;
+  padding: 2% 0% 2% 0%;
+  border-style: solid;
+  border-radius: 8px; 
+  width: 50%;
+  display: block;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
@@ -68,5 +82,4 @@ article {
 
 .simulate-error-container {
   text-align: center;
-  padding-top: 2%;
 }
