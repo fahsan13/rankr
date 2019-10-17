@@ -4,7 +4,7 @@ Rankr is a React application allowing users to randomly view a predefined set of
 
 The application is able to retrieve & parse provided JSON article data to render a random article on load. When the user requests another article, another random article is loaded from the remainder of the set. 
 
-Once all articles have been viewed, the user can submit a ranking (currently in the form of a comma-separated list).
+Once all articles have been viewed, the user can submit a ranking (currently in the form of a comma-separated string of values).
 
 ## Getting Started
 
@@ -37,13 +37,16 @@ $ npm test
 
 - Refactor to use more idiomatic React style where appropriate.
     - Generally, I feel I did a good job of this having made heavy use of official React docs. As my knowledge of React grows, there are likely parts I'd want to refactor according to best practice.
-- Caching of articles.
-- Implementation of Cucumber scenarios for browser-based E2E workflows.
-- Investigation/implementation of snapshot-based Jest tests.
+- Cache articles.
+- Implement Cucumber scenarios for browser-based E2E workflows.
+- Investigate/implementat snapshot-based Jest tests.
     - This is another new area (to me) that I unfortunately couldn't explore due to time constaints.
+- Improve ranking UI/UX.
+    - e.g. replacing current implementation with a draggable list of articles.
 - Refine styling.
-    - I opted to put all CSS in App.css. As the application grows, I'd look to separate concerns and extract out relevant CSS for components into their own files.
-- Improved error handling.
+    - I used dedicated stylesheets instead of inline styles for performance and opted to put all CSS in App.css. 
+        - As the application grows, I'd look to separate concerns and extract out relevant CSS for components into their own files, or explore alternative scalable solutions for styling.
+- Improve error handling.
 - Manual build configuration.
 
 ## Reflection

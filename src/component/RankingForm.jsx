@@ -22,11 +22,11 @@ class RankingForm extends React.Component {
   handleSubmit(event) {
     const { parsedRanking, error } = this.validate(this.state.enteredText);
 
-    if (!error) {
+    if (error) {
+      alert(`There was an error: ${error}`);
+    } else {
       // This is where I'd initiate an AJAX POST request to submit the parsed user ranking to the server.
       this.setState({ isRankingSubmitted: true, submittedRanking: parsedRanking });
-    } else {
-      alert(`There was an error: ${error}`);
     }
     event.preventDefault();
   }
