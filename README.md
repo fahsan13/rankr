@@ -39,7 +39,7 @@ $ npm test
     - Generally, I feel I did a good job of this having made heavy use of official React docs. As my knowledge of React grows, there are likely parts I'd want to refactor according to best practice.
 - Cache articles.
 - Implement Cucumber scenarios for browser-based E2E workflows.
-- Investigate/implementat snapshot-based Jest tests.
+- Investigate/implement snapshot-based Jest tests.
     - This is another new area (to me) that I unfortunately couldn't explore due to time constaints.
 - Improve ranking UI/UX.
     - e.g. replacing current implementation with a draggable list of articles.
