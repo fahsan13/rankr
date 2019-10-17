@@ -21,9 +21,7 @@ class ArticleDataLoader extends React.Component {
 
   checkIfAllArticlesRead = () => {
     if (this.state.articles.length === 0) {
-      this.setState({
-        allArticlesRead: true
-      });
+      this.setState({ allArticlesRead: true });
     };
   };
 
