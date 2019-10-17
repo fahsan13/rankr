@@ -26,6 +26,7 @@ Run tests using:
 ```
 $ npm test
 ```
+(You may have to press the 'A' key to run all tests.)
 
 ## Assumptions
 
@@ -42,13 +43,13 @@ $ npm test
 - Investigate/implement snapshot-based Jest tests.
     - This is another new area (to me) that I unfortunately couldn't explore due to time constaints.
 - Improve ranking UI/UX.
-    - e.g. replacing current implementation with a draggable list of articles.
-- Refine styling.
+    - e.g. replacing current barebones implementation with a draggable list of articles.
+- Refine styling, particularly around the RankingForm component.
     - I used dedicated stylesheets instead of inline styles for performance and opted to put all CSS in App.css. 
         - As the application grows, I'd look to separate concerns and extract out relevant CSS for components into their own files, or explore alternative scalable solutions for styling.
 - Improve error handling.
 - Manual build configuration.
-    - This would allow me to move data/ (containing JSON files) from the public/ folder to the project root.
+    - This would allow me to move the data/ folder (containing JSON files) from the public/ folder to the project root.
 
 ## Reflection
 
