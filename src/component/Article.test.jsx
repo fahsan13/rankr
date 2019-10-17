@@ -1,17 +1,3 @@
-// import React from 'react';
-// import ArticleElement from './ArticleElement';
-
-// const Article = ({ articleTitle, articleBody, loading }) => {
-//     return loading ? 'Loading' : (
-//         <>
-//             <h1>{articleTitle}</h1>
-//             {articleBody.map((articleElement, key) => <ArticleElement type={articleElement.type} model={articleElement.model} key={key} />)}
-//         </>
-//     ); 
-// };   
-
-// export default Article;
-
 import React from 'react';
 import {render, unmountComponentAtNode } from 'react-dom';
 import Article from './Article';
@@ -35,10 +21,10 @@ describe('Article', () => {
         act(() => {
             render(<Article articleTitle={null} articleBody={null} loading={true}/>, container);
         });
-        expect(container.innerHTML).toBe('Loading...');
+        expect(container.innerHTML).toContain('Loading...');
     });
 
-    it('should correctly render provided article data if data is not loading', () => {
+    it('should correctly render provided article data with appropriate HTML tags if data is not loading', () => {
         const title = 'Test Article Title';
         const body = [{
             'type': 'paragraph',

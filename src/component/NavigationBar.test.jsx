@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, unmountComponentAtNode } from 'react-dom';
+import { render, unmountComponentAtNode } from 'react-dom';
 import NavigationBar from './NavigationBar';
 import { act } from "react-dom/test-utils";
 
@@ -21,7 +21,7 @@ describe('NavigationBar', () => {
         act(() => {
             render(<NavigationBar allArticlesRead={false} handler={() => {}} loading={false}/>, container);
         });
-        expect(container.innerHTML).toBe('<button>Next Article</button>');
+        expect(container.innerHTML).toBe(`<div class="next-article-button-container"><button class="button">Next Article</button></div>`);
     });
 
     it('should render an empty string when there are remaining articles but data is loading', () => {
@@ -31,10 +31,10 @@ describe('NavigationBar', () => {
         expect(container.innerHTML).toBe('');
     });
 
-    it('should indicate that there are no articles remaining when user has read all articles and data is not loading', () => {
+    it('should return a form for ranking articles when user has read all articles and data is not loading', () => {
         act(() => {
             render(<NavigationBar allArticlesRead={true} handler={() => {}} loading={false}/>, container);
         });
-        expect(container.innerHTML).toBe(`You've read all available articles.`);
+        expect(container.innerHTML).toContain(`<div class="ranking-form">`);
     });
 });

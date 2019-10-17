@@ -7,7 +7,10 @@ const NavigationBar = ({ allArticlesRead, handler, loading }) => {
                 <RankingForm />
                </>
     }
-    return loading ? null : <button onClick={handler()}>Next Article</button> 
+    return loading ? null : 
+        <div className="next-article-button-container">
+            <button className="button" onClick={handler()}>Next Article</button> 
+        </div>
 };
 
 export default NavigationBar;

@@ -21,7 +21,7 @@ describe('ArticleElement', () => {
         act(() => {
             render(<ArticleElement type={ 'heading' } model={ {text: 'test heading'} }/>, container);
         });
-        expect(container.innerHTML).toBe('<h2>test heading</h2>');
+        expect(container.innerHTML).toBe('<h3>test heading</h3>');
     });
 
     it('should render paragraph correctly using <p> tag with provided text', () => {
@@ -41,7 +41,7 @@ describe('ArticleElement', () => {
         act(() => {
             render(<ArticleElement type={ 'image' } model={testModel}/>, container);
         });
-        expect(container.innerHTML).toBe(`<img src="rankr.com" alt="expected alt text" width="360" height="420">`);
+        expect(container.innerHTML).toBe(`<img class="article-image" src="rankr.com" alt="expected alt text" width="360" height="420">`);
     });
 
     it('should render ordered list correctly using <ol> tag with provided items', () => {

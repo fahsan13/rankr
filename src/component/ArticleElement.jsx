@@ -1,8 +1,8 @@
 import React from 'react';
 
-const renderHeading = data => <h2>{data.text}</h2>;
+const renderHeading = data => <h3>{data.text}</h3>;
 const renderParagraph = data => <p>{data.text}</p>;
-const renderImage = data => <img src={data.url} alt={data.altText} width={data.width} height={data.height} />;
+const renderImage = data => <img className="article-image" src={data.url} alt={data.altText} width={data.width} height={data.height} />;
 const renderList = data => {
     return (data.type === 'ordered') ?
         <ol>{data.items.map((listItem, key) => <li key={key}>{listItem}</li>)}</ol> :

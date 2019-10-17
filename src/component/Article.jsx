@@ -2,7 +2,7 @@ import React from 'react';
 import ArticleElement from './ArticleElement';
 
 const Article = ({ articleTitle, articleBody, loading }) => {
-    return loading ? 'Loading...' : (
+    return loading ? <div className="status-message">Loading...</div> : (
         <>
             <article>
                 <h1>{articleTitle}</h1>
