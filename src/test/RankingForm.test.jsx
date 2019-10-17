@@ -22,9 +22,7 @@ afterEach(() => {
 
 describe('RankingForm', () => {
     it('should be initialised with default state', () => {
-        const rankingForm = new RankingForm();
-
-        expect(rankingForm.state).toStrictEqual({
+        expect(new RankingForm().state).toStrictEqual({
             "enteredText": "",
             "isRankingSubmitted": false,
             "submittedRanking": null,
@@ -78,7 +76,7 @@ describe('RankingForm', () => {
 
     it('should return no error when validating a valid ranking', () => {
         const { error } = rankingFormInstance.validate('1, 2, 3, 4, 5');
-        
+
         expect(error).toBeNull();
     });
 });
