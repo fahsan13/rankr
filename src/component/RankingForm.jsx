@@ -48,7 +48,7 @@ class RankingForm extends React.Component {
   render() {
     return this.state.isRankingSubmitted ? (
       <div className="ranking-submitted">
-        <b>Thanks for submitting your ranking of: {this.state.submittedRanking}</b>
+        <b>Thanks for submitting your ranking of: {this.state.enteredText}</b>
       </div>
     ) : (
         <div className="ranking-form">
