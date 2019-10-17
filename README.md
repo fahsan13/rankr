@@ -41,7 +41,7 @@ $ npm test
 - Cache articles.
 - Implement Cucumber scenarios for browser-based E2E workflows.
 - Investigate/implement snapshot-based Jest tests.
-    - This is another new area (to me) that I unfortunately couldn't explore due to time constaints.
+    - This is another new area (to me) that I unfortunately couldn't explore due to time constraints.
 - Improve ranking UI/UX.
     - e.g. replacing current barebones implementation with a draggable list of articles.
 - Refine styling, particularly around the RankingForm component.
