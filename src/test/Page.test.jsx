@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import Page from './Page';
+import Page from '../component/Page';
 import { act } from "react-dom/test-utils";
 
 let container = null;

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './css/App.css';
 import ArticleDataLoader from './component/ArticleDataLoader';
 import {
   BrowserRouter as Router,
@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 const App = () => {
-  return (  
+  return (
     <Router>
       <Switch>
         <Route path="/" exact component={ArticleDataLoader} />

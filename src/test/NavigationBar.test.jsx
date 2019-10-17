@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import NavigationBar from './NavigationBar';
+import NavigationBar from '../component/NavigationBar';
 import { act } from "react-dom/test-utils";
 
 let container = null;

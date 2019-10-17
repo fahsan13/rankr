@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
-import ArticleDataLoader from './ArticleDataLoader';
+import ArticleDataLoader from '../component/ArticleDataLoader';
 import { act } from "react-dom/test-utils";
 import Adapter from 'enzyme-adapter-react-16';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, unmountComponentAtNode } from 'react-dom';
-import ArticleElement from './ArticleElement';
+import ArticleElement from '../component/ArticleElement';
 import { act } from "react-dom/test-utils";
 
 let container = null;

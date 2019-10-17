@@ -31,7 +31,7 @@ class ArticleDataLoader extends React.Component {
     const currentArticle = this.getRandomArticleIndex();
     let json = null;
     try {
-      const response = await fetch(`./data/article-${currentArticle}.json`);
+      const response = await fetch(`../data/article-${currentArticle}.json`);
       json = await response.json();
     } catch (error) {
       this.setState({ error: error });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
-import RankingForm from './RankingForm';
+import RankingForm from '../component/RankingForm';
 import Adapter from 'enzyme-adapter-react-16';
 
 let rankingForm = null;
