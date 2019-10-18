@@ -61,10 +61,11 @@ describe('Page', () => {
 
     it('should correctly render final article and display the ranking form div when data is not loading and all articles have been read', () => {
         act(() => {
-            render(<Page articleTitle={testArticleTitle} articleBody={testArticleBody} loading={false}
-                error={false} allArticlesRead={true} handler={() => { }} />, container);
+            render(
+                <Page articleTitle={testArticleTitle} articleBody={testArticleBody} loading={false} error={false} allArticlesRead={true} handler={() => { }} />,
+                container);
         });
-        
+
         expect(container.innerHTML).toContain(`<article><h1>Test Title</h1><p>Test Article Paragraph</p></article><div class="ranking-form">`);
     });
 });
